@@ -1,4 +1,4 @@
-package net.kigobe.notes.services.security;
+package net.kigobe.notes.services.impl;
 
 import net.kigobe.notes.dtos.UserDTO;
 import net.kigobe.notes.model.AppRole;
@@ -6,6 +6,7 @@ import net.kigobe.notes.model.Role;
 import net.kigobe.notes.model.User;
 import net.kigobe.notes.repositories.RoleRepository;
 import net.kigobe.notes.repositories.UserRepository;
+import net.kigobe.notes.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-
+    
     @Autowired
     UserRepository userRepository;
 
@@ -23,14 +24,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUserRole(Long userId, String roleName) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findById(userId).orElseThrow(()
+                -> new RuntimeException("User not found"));
         AppRole appRole = AppRole.valueOf(roleName);
         Role role = roleRepository.findByRoleName(appRole)
                 .orElseThrow(() -> new RuntimeException("Role not found"));
         user.setRole(role);
         userRepository.save(user);
     }
-
 
     @Override
     public List<User> getAllUsers() {
@@ -67,4 +68,3 @@ public class UserServiceImpl implements UserService {
 
 
 }
-

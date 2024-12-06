@@ -1,9 +1,7 @@
-package net.kigobe.notes.services.security;
-
+package net.kigobe.notes.security.services;
 
 import net.kigobe.notes.model.User;
 import net.kigobe.notes.repositories.UserRepository;
-import net.kigobe.notes.services.security.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -30,4 +28,3 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 
 }
-

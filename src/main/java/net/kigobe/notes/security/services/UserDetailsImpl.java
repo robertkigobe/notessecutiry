@@ -1,12 +1,12 @@
-package net.kigobe.notes.services.security;
+package net.kigobe.notes.security.services;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
-import net.kigobe.notes.model.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.kigobe.notes.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -110,4 +110,3 @@ public class UserDetailsImpl implements UserDetails {
         return Objects.equals(id, user.id);
     }
 }
-

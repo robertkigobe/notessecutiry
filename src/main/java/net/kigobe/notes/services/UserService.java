@@ -1,4 +1,5 @@
-package net.kigobe.notes.services.security;
+package net.kigobe.notes.services;
+
 
 import net.kigobe.notes.dtos.UserDTO;
 import net.kigobe.notes.model.User;

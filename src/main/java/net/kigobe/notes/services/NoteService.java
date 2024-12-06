@@ -1,6 +1,5 @@
 package net.kigobe.notes.services;
 
-
 import net.kigobe.notes.model.Note;
 
 import java.util.List;

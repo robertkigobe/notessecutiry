@@ -1,7 +1,8 @@
-package net.kigobe.notes.services;
+package net.kigobe.notes.services.impl;
 
 import net.kigobe.notes.model.Note;
 import net.kigobe.notes.repositories.NoteRepository;
+import net.kigobe.notes.services.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,3 +44,5 @@ public class NoteServiceImpl implements NoteService {
         return personalNotes;
     }
 }
+
+
