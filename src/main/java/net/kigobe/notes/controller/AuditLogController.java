@@ -13,18 +13,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/audit")
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 public class AuditLogController {
     @Autowired
     AuditLogService auditLogService;
 
     @GetMapping
-    @PreAuthorize("HasRole('ROLE_ADMIN')")
     public List<AuditLog> getAuditLogs(){
         return auditLogService.getAllAuditLogs();
     }
 
     @GetMapping("/note/{id}")
-    @PreAuthorize("HasRole('ROLE_ADMIN')")
     public List<AuditLog> getNoteAuditLogs(@PathVariable Long id){
         return auditLogService.getAuditLogsForNoteId(id);
     }
